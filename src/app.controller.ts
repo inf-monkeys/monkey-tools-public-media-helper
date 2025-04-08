@@ -23,7 +23,7 @@ export class AppController {
   public getManifestJson(): ManifestJson {
     return {
       schema_version: SchemaVersion.v1,
-      display_name: 'Public Media Helper',
+      display_name: 'PublicMediaHelper',
       namespace: 'monkey_tools_public_media_helper',
       auth: config.server.auth,
       api: {
