@@ -12,9 +12,21 @@ export interface RedisConfig {
   prefix: string;
 }
 
+export interface S3Config {
+  accessKeyId: string;
+  secretAccessKey: string;
+  endpoint: string;
+  region: string;
+  modelBucketName: string;
+  bucket: string;
+  publicAccessUrl: string;
+  forcePathStyle: boolean;
+}
+
 export interface Config {
   server: ServerConfig;
   redis: RedisConfig;
+  s3: S3Config;
 }
 
 const port = readConfig('server.port', 3000);
@@ -35,6 +47,7 @@ export const config: Config = {
     url: readConfig('redis.url'),
     prefix: readConfig('redis.prefix', 'monkeys:'),
   },
+  s3: readConfig('s3', {}),
 };
 
 const validateConfig = () => {

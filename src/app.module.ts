@@ -4,10 +4,10 @@ import { AppService } from './app.service';
 import { CacheModule } from './common/cache/cache.module';
 import { LockModule } from './common/lock/lock.module';
 import { CommonMiddleware } from './common/middlewares/common.middleware';
-import { ExampleModule } from './modules/example/example.module';
+import { PublicMediaHelperModule } from './modules/public-media-helper/public-media-helper.module';
 
 @Module({
-  imports: [CacheModule, LockModule, ExampleModule],
+  imports: [CacheModule, LockModule, PublicMediaHelperModule],
   controllers: [AppController],
   providers: [AppService],
 })

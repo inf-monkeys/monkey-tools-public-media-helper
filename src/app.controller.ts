@@ -9,7 +9,7 @@ import {
 
 @Controller()
 export class AppController {
-  constructor() {}
+  constructor() { }
 
   @Get('/healthz')
   public async healthz() {
@@ -23,8 +23,8 @@ export class AppController {
   public getManifestJson(): ManifestJson {
     return {
       schema_version: SchemaVersion.v1,
-      display_name: 'ComfyUI',
-      namespace: 'monkeys_tool_template_for_nestjs',
+      display_name: 'Public Media Helper',
+      namespace: 'monkey_tools_public_media_helper',
       auth: config.server.auth,
       api: {
         type: ApiType.openapi,

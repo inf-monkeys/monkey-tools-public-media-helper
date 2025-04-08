@@ -1,5 +1,5 @@
 {
-  "name": "monkey-tools-template-nodejs",
+  "name": "monkey-tools-public-media-helper",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -20,6 +20,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.782.0",
+    "@aws-sdk/s3-request-presigner": "^3.782.0",
     "@inf-monkeys/monkeys": "^0.0.5",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
@@ -30,6 +32,7 @@
     "joiful": "^3.0.2",
     "lodash": "^4.17.21",
     "log4js": "^6.9.1",
+    "nanoid": "3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
     "yaml": "^2.4.1"
