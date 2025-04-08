@@ -24,7 +24,7 @@ export class PublicMediaHelperController {
     summary: 'Upload File To Public S3',
     description: 'Upload an file to the public S3.',
   })
-  @MonkeyToolName('upload-file-to-public-s3')
+  @MonkeyToolName('upload_file_to_public_s3')
   @MonkeyToolCategories(['extra'])
   @MonkeyToolIcon('emoji:🗃️:#d9caf8')
   @MonkeyToolDisplayName({

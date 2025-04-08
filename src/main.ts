@@ -8,8 +8,8 @@ import { ExceptionsFilter } from './common/filters/exception.filter';
 
 export const setupSwagger = (app: INestApplication) => {
   const builder = new DocumentBuilder()
-    .setTitle('Monkey Tools Tempalte for Nestjs')
-    .setDescription('Monkey Tools Tempalte for Nestjs')
+    .setTitle('Monkey Tools Public Media Helper')
+    .setDescription('Transfer file to public S3')
     .setVersion('1.0')
     .addServer(config.server.appUrl, 'Server');
   const document = SwaggerModule.createDocument(app, builder.build(), {

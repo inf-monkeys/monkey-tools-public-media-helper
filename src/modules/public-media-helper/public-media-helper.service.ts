@@ -1,5 +1,6 @@
 import { CacheManager } from '@/common/cache/impelements';
 import { LockManager } from '@/common/lock/impelements';
+import { logger } from '@/common/logger';
 import { S3Helpers } from '@/common/s3';
 import { getMimeType } from '@/common/utils/file';
 import { Inject, Injectable } from '@nestjs/common';
@@ -43,9 +44,12 @@ export class PublicMediaHelperService {
 
       const result = await s3.uploadFile(fileBuffer, fileKey, fileContentType);
 
+      logger.info(`${fileUrl} -> ${result}`);
+
       return result;
 
     } catch (error) {
+      logger.error(`${fileUrl} Error: ${error}`);
       throw new Error(`Failed to upload file to public S3: ${error}`);
     }
   }
