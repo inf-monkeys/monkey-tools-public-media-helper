@@ -53,4 +53,20 @@ export class PublicMediaHelperService {
       throw new Error(`Failed to upload file to public S3: ${error}`);
     }
   }
+
+  public async uploadFilesToPublicS3(
+    fileUrls: string[],
+    contentType?: string,
+    fileUrlRegex?: string,
+    fileUrlReplace?: string,
+  ) {
+    const results = [];
+
+    for (const fileUrl of fileUrls) {
+      const result = await this.uploadFileToPublicS3(fileUrl, contentType, fileUrlRegex, fileUrlReplace);
+      results.push(result);
+    }
+
+    return results;
+  }
 }
