@@ -65,6 +65,13 @@ export class S3Helpers {
       ContentType: contentType,
     });
     await this.client.send(command);
+
+    // 如果是私有桶，返回预签名 URL
+    if (config.s3.isPrivate) {
+      return await this.getFileSignedUrl(fileKey);
+    }
+
+    // 如果是公共桶，返回公共访问 URL
     return config.s3.publicAccessUrl + '/' + fileKey;
   }
 
@@ -83,7 +90,7 @@ export class S3Helpers {
       Key: fileKey,
     });
 
-    const res = await getSignedUrl(this.client, command, { expiresIn: 3600 });
+    const res = await getSignedUrl(this.client, command, { expiresIn: 604800 }); // 7 days
     return res;
   }
 }

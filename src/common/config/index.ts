@@ -13,6 +13,7 @@ export interface RedisConfig {
 }
 
 export interface S3Config {
+  isPrivate: boolean;
   accessKeyId: string;
   secretAccessKey: string;
   endpoint: string;
